@@ -1,5 +1,13 @@
 require 'rails_helper'
+require 'faker'
 
 RSpec.describe Campu, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it '#Address' do
+    campu = create(:Campu, address:Faker::Address.street_name, )
+    expect(campu).to eq(Faker::Address.street_name)
+  end
+
+
+
+
 end

@@ -1,14 +1,15 @@
 require 'rails_helper'
+require 'faker'
 
 RSpec.describe "campus/edit", type: :view do
   before(:each) do
     @campu = assign(:campu, Campu.create!(
-      address: "MyString",
-      nome: "MyString",
-      numero: 1,
-      bairro: "MyString",
-      cidade: "MyString",
-      cep: 1
+      address: Faker::Address.street_name,
+      nome: Faker::University.name,
+      numero: Faker::Address.building_number,
+      bairro: Faker::Address.community,
+      cidade: Faker::Address.city,
+      cep: Faker::Address.postcode
     ))
   end
 

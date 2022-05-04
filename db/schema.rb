@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_03_200345) do
+ActiveRecord::Schema.define(version: 2022_05_04_025605) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name", default: "", null: false
+    t.integer "iduff", default: 1, null: false
+    t.boolean "active", default: true
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_admins_on_user_id"
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
   create_table "campus", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -26,10 +34,9 @@ ActiveRecord::Schema.define(version: 2022_05_03_200345) do
     t.string "bairro"
     t.string "cidade"
     t.integer "cep"
-    t.bigint "caronas_id"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["caronas_id"], name: "index_campus_on_caronas_id"
   end
 
   create_table "caronas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -38,8 +45,10 @@ ActiveRecord::Schema.define(version: 2022_05_03_200345) do
     t.datetime "date_hour"
     t.string "departure"
     t.string "arrival"
+    t.bigint "users_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["users_id"], name: "index_caronas_on_users_id"
   end
 
   create_table "points", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -51,11 +60,18 @@ ActiveRecord::Schema.define(version: 2022_05_03_200345) do
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "nome"
-    t.integer "iduff"
+    t.string "email", default: "", null: false
+    t.string "name", default: "", null: false
+    t.boolean "active", default: true
+    t.integer "iduff", default: 2134, null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "points", "caronas"

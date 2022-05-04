@@ -1,0 +1,2 @@
+module AdminsBackoffice::UsersIndexHelper
+end
