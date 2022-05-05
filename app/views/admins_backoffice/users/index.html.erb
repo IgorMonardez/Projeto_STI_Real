@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1> Lista de Usuários </h1>
-<%= form_for @user do |f| %>
-  <%f.autocomplete_field :user_name, autocomplete_user_iduff_admins_backoffice_users_path 	 %>
 <table id="example">
   <thead>
     <tr>
@@ -21,7 +19,11 @@
       <td><%= user.iduff %></td>
       <td><%= link_to 'Olhar', admins_backoffice_user_path(user) %></td>
       <td><%= link_to 'Editar', edit_admins_backoffice_user_path(user) %></td>
-      <td><%= link_to 'Desativar', admins_backoffice_user_path(user),method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      <% if user.active %>
+        <td><%= link_to 'Desativar',  admins_backoffice_user_destroy_user_path(user), :method => :patch, data: { confirm: 'Tem certeza?' } %></td>
+      <% else%>
+        <td><%= link_to 'Reative',  admins_backoffice_user_reactive_user_path(user), :method => :patch, data: { confirm: 'Tem certeza?' } %></td>
+      <%end %>
 
     </tr>
   <% end %>
@@ -30,9 +32,3 @@
 </table>
 
 <%= link_to 'Novo usuário',  new_admins_backoffice_user_path %>
-
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    } );
-</script>

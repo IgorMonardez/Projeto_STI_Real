@@ -7,6 +7,10 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "bootstrap-autocomplete": "^2.3.7",
+    "channels": "^0.0.4",
+    "jquery": "^3.6.0",
+    "jquery-ujs": "^1.2.3",
+    "stimulus-autocomplete": "^3.0.2",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"

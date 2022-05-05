@@ -63,6 +63,7 @@ module AdminsBackoffice
 
     # DELETE /campus/1 or /campus/1.json
     def destroy
+      @campu = Campu.find(params[:campu_id])
       @campu.update active: false
 
       respond_to do |format|
@@ -75,7 +76,7 @@ module AdminsBackoffice
 
     # Use callbacks to share common setup or constraints between actions.
     def set_campu
-      @campu = Campu.find(params[:id])
+      @campu = Campu.find_by_id(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

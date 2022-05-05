@@ -16,8 +16,12 @@
       <td><%= admin.iduff %></td>
       <td><%= link_to 'Olhe', admins_backoffice_admin_path(admin) %></td>
       <td><%= link_to 'Edite', edit_admins_backoffice_admin_path(admin) %></td>
-      <td><%= link_to 'Destrua', admins_backoffice_admin_path(admin), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
-    </tr>
+      <% if admin.active %>
+        <td><%= link_to 'Destrua',  admins_backoffice_admin_destroy_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+      <% else %>
+        <td><%= link_to 'Reativar',  admins_backoffice_admin_reactive_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+      <% end %>
+      </tr>
   <% end %>
   </tbody>
 </table>

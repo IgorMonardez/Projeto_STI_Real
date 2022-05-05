@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_04_025605) do
+ActiveRecord::Schema.define(version: 2022_05_05_151500) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
-    t.integer "iduff", default: 1, null: false
+    t.bigint "iduff", default: 1, null: false
     t.boolean "active", default: true
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 2022_05_04_025605) do
     t.datetime "date_hour"
     t.string "departure"
     t.string "arrival"
-    t.bigint "users_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "users_id", null: false
     t.index ["users_id"], name: "index_caronas_on_users_id"
   end
 
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2022_05_04_025605) do
     t.string "email", default: "", null: false
     t.string "name", default: "", null: false
     t.boolean "active", default: true
-    t.integer "iduff", default: 2134, null: false
+    t.bigint "iduff", default: 2134, null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -76,5 +76,6 @@ ActiveRecord::Schema.define(version: 2022_05_04_025605) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "caronas", "users", column: "users_id"
   add_foreign_key "points", "caronas"
 end

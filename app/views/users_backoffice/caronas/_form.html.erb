@@ -1,4 +1,4 @@
-<%= form_with(model: [:users_backoffice, @carona]) do |form| %>
+<%= form_with(model: [:users_backoffice_user, @carona]) do |form| %>
   <% if @carona.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@carona.errors.count, "error") %> proibe essa carona de ser salva:</h2>
@@ -24,6 +24,11 @@
   <div class="field">
     <%= form.label :date_hour %>
     <%= form.datetime_select :date_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :campusUFF? %>
+    <%= form.label :campusUFF? %>
   </div>
 
   <div class="field">

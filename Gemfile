@@ -24,7 +24,7 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan', '~> 1.9'
 gem 'devise'
-gem 'rails-autocomplete'
+gem 'stimulus-rails'
 gem 'jquery-rails'
 
 # Use Active Storage
@@ -66,3 +66,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem "importmap-rails", "~> 1.0"

@@ -26,8 +26,12 @@
         <td><%= campu.cep %></td>
         <td><%= link_to 'Olhe', admins_backoffice_campu_path(campu) %></td>
         <td><%= link_to 'Edite', edit_admins_backoffice_campu_path(campu) %></td>
-        <td><%= link_to 'Destrua', admins_backoffice_campu_destroy_path(campu), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
-      </tr>
+        <% if campu.active %>
+        <td><%= link_to 'Destrua', admins_backoffice_campu_destroy_campu_path(campu), data: { confirm: 'Tem certeza?' } %></td>
+        <% else %>
+          <td><%= link_to 'Reative', admins_backoffice_campu_reactive_campu_path(campu), data: { confirm: 'Tem certeza?' } %></td>
+        </tr>
+          <% end %>
     <% end %>
   </tbody>
 </table>

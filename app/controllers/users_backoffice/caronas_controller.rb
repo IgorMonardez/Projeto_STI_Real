@@ -17,7 +17,7 @@ module UsersBackoffice
     # GET /caronas/new
     def new
       @carona = Carona.new
-      @carona.users_id = current_user
+
     end
 
     # GET /caronas/1/edit
@@ -65,6 +65,8 @@ module UsersBackoffice
     end
 
     private
+
+
 
     # Use callbacks to share common setup or constraints between actions.
     def set_carona
