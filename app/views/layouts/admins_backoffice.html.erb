@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
   <header>
+    <title> Sistema de carona da UFF | CARONUFF</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'admins_backoffice', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   </header>
   <body>
+  <%= render 'layouts/header_admins_backoffice' %>
   <%= yield %>
   </body>
 </html>

@@ -1,0 +1,41 @@
+<%= form_with(model: [ :admins_backoffice, @user ], local: true ) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> proibiu esse usuário de ser salvo</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :email %><br />
+    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %><br />
+    <%= form.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :iduff %><br />
+    <%= form.number_field :iduff, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %> <br />
+    <%= form.password_field :password, autofocus: true%>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %> <br />
+    <%= form.password_field :password_confirmation, autofocus: true %>
+  </div>
+
+  <div class="action">
+    <%= form.submit %>
+  </div>
+<% end %>

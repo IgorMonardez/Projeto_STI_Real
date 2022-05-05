@@ -1,0 +1,11 @@
+<header class="header">
+  <a href="/"> <%= image_tag('logo_uff.png',width: 100,draggable: "true", id:'logo-uff',alias: 'Logo da UFF') %> </a>
+  <nav class="nav">
+    <ul class="menu">
+      <li> <%= link_to 'Campus', admins_backoffice_campus_path %> </li>
+      <li> <%= link_to 'Usuários', admins_backoffice_users_path %></li>
+      <li> <%= link_to 'Admins', admins_backoffice_admins_path %></li>
+      <li> <%= link_to 'Sair',  destroy_admin_session_path, method: :delete %></li>
+    </ul>
+  </nav>
+</header>

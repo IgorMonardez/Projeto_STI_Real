@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Preco</th>
-      <th>Qtd passageiros</th>
+      <th>Quantidade de passageiros</th>
       <th>Date hour</th>
       <th>Departure</th>
       <th>Arrival</th>
@@ -22,9 +22,9 @@
         <td><%= carona.date_hour %></td>
         <td><%= carona.departure %></td>
         <td><%= carona.arrival %></td>
-        <td><%= link_to 'Show', carona %></td>
-        <td><%= link_to 'Edit', edit_carona_path(carona) %></td>
-        <td><%= link_to 'Destroy', carona, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', users_backoffice_carona(carona) %></td>
+        <td><%= link_to 'Edit', edit_users_backoffice_carona_path(carona) %></td>
+        <td><%= link_to 'Destroy', users_backoffice_carona_destroy_path(carona), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Carona', new_carona_path %>
+<%= link_to 'New Carona', new_users_backoffice_carona_path %>

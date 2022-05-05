@@ -1,0 +1,9 @@
+<header class="header">
+  <a href="/"> <%= image_tag('logo_uff.png',width: 100,draggable: "true", id:'logo-uff',alias: 'Logo da UFF') %> </a>
+  <nav class="nav">
+    <ul class="menu">
+      <li><%= link_to 'Lista de Caronas', users_backoffice_caronas_path%></li>
+      <li><%= link_to 'Sair', destroy_user_session_path %></li>
+    </ul>
+  </nav>
+</header>

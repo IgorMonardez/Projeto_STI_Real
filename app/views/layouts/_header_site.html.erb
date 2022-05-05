@@ -2,8 +2,16 @@
   <a href="/"> <%= image_tag('logo_uff.png',width: 100,draggable: "true", id:'logo-uff',alias: 'Logo da UFF') %> </a>
   <nav class="nav">
     <ul class="menu">
+      <% if !user_signed_in?   %>
       <li> <%= link_to 'Log-in Usuário', user_session_path %> </li>
-      <li> <%= link_to 'Área do admnistrador', admin_session_path %></li>
+      <% else %>
+      <li> <%= link_to 'Área do Usuário', users_backoffice_welcome_index_path %></li>
+      <% end %>
+      <% if !admin_signed_in? %>
+      <li> <%= link_to 'Log-in Administrador', admin_session_path %></li>
+      <%else %>
+      <li> <%= link_to 'Área Administrador', admins_backoffice_welcome_index_path %></li>
+      <% end %>
     </ul>
   </nav>
 </header>

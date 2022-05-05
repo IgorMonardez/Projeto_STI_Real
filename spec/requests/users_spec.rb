@@ -63,7 +63,7 @@ RSpec.describe "/users", type: :request do
         }.to change(User, :count).by(1)
       end
 
-      it "redirects to the created user" do
+      it "redirects to the created users" do
         post users_url, params: { user: valid_attributes }
         expect(response).to redirect_to(user_url(User.last))
       end
@@ -89,14 +89,14 @@ RSpec.describe "/users", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested user" do
+      it "updates the requested users" do
         user = User.create! valid_attributes
         patch user_url(user), params: { user: new_attributes }
         user.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the user" do
+      it "redirects to the users" do
         user = User.create! valid_attributes
         patch user_url(user), params: { user: new_attributes }
         user.reload
@@ -114,7 +114,7 @@ RSpec.describe "/users", type: :request do
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested user" do
+    it "destroys the requested users" do
       user = User.create! valid_attributes
       expect {
         delete user_url(user)

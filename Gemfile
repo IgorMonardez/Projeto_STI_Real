@@ -24,7 +24,10 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan', '~> 1.9'
 gem 'devise'
-# Use Active Storage variant
+gem 'rails-autocomplete'
+gem 'jquery-rails'
+
+# Use Active Storage
 
 gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb

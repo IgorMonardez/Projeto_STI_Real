@@ -8,14 +8,14 @@ RSpec.describe "users/new", type: :view do
     ))
   end
 
-  it "renders new user form" do
+  it "renders new users form" do
     render
 
     assert_select "form[action=?][method=?]", users_path, "post" do
 
-      assert_select "input[name=?]", "user[nome]"
+      assert_select "input[name=?]", "users[nome]"
 
-      assert_select "input[name=?]", "user[iduff]"
+      assert_select "input[name=?]", "users[iduff]"
     end
   end
 end

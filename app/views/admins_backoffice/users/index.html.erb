@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Lista de Usuários </h1>
+<%= form_for @user do |f| %>
+  <%f.autocomplete_field :user_name, autocomplete_user_iduff_admins_backoffice_users_path 	 %>
+<table id="example">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Nome</th>
+      <th>iduff</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.email %></td>
+      <td><%= user.name %></td>
+      <td><%= user.iduff %></td>
+      <td><%= link_to 'Olhar', admins_backoffice_user_path(user) %></td>
+      <td><%= link_to 'Editar', edit_admins_backoffice_user_path(user) %></td>
+      <td><%= link_to 'Desativar', admins_backoffice_user_path(user),method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to 'Novo usuário',  new_admins_backoffice_user_path %>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>

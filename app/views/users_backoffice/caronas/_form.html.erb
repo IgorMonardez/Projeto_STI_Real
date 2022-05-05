@@ -1,10 +1,10 @@
-<%= form_with(model: carona) do |form| %>
-  <% if carona.errors.any? %>
+<%= form_with(model: [:users_backoffice, @carona]) do |form| %>
+  <% if @carona.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(carona.errors.count, "error") %> prohibited this carona from being saved:</h2>
+      <h2><%= pluralize(@carona.errors.count, "error") %> proibe essa carona de ser salva:</h2>
 
       <ul>
-        <% carona.errors.each do |error| %>
+        <% @carona.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

@@ -8,14 +8,14 @@ RSpec.describe "users/edit", type: :view do
     ))
   end
 
-  it "renders the edit user form" do
+  it "renders the edit users form" do
     render
 
     assert_select "form[action=?][method=?]", user_path(@user), "post" do
 
-      assert_select "input[name=?]", "user[nome]"
+      assert_select "input[name=?]", "users[nome]"
 
-      assert_select "input[name=?]", "user[iduff]"
+      assert_select "input[name=?]", "users[iduff]"
     end
   end
 end
