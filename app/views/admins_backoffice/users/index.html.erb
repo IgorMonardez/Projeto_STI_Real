@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1> Lista de Usuários </h1>
-<table id="example">
+<th><%= link_to 'Novo usuário',  new_admins_backoffice_user_path %></th>
+<table id="example" class="table table-striped table-bordered" style="width:100%">
   <thead>
-    <tr>
-      <th>ID</th>
-      <th>Email</th>
-      <th>Nome</th>
-      <th>iduff</th>
-    </tr>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Nome</th>
+    <th>iduff</th>
+  </tr>
   </thead>
   <tbody>
   <% @users.each do |user| %>
@@ -20,15 +20,20 @@
       <td><%= link_to 'Olhar', admins_backoffice_user_path(user) %></td>
       <td><%= link_to 'Editar', edit_admins_backoffice_user_path(user) %></td>
       <% if user.active %>
-        <td><%= link_to 'Desativar',  admins_backoffice_user_destroy_user_path(user), :method => :patch, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to 'Desativar',  admins_backoffice_user_destroy_user_path(user), data: { confirm: 'Tem certeza?' } %></td>
       <% else%>
-        <td><%= link_to 'Reative',  admins_backoffice_user_reactive_user_path(user), :method => :patch, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to 'Reative',  admins_backoffice_user_reactive_user_path(user), data: { confirm: 'Tem certeza?' } %></td>
       <%end %>
-
     </tr>
   <% end %>
+  <tfoot>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Nome</th>
+    <th>iduff</th>
 
-  </tbody>
+  </tr>
+  </tfoot>
 </table>
 
-<%= link_to 'Novo usuário',  new_admins_backoffice_user_path %>

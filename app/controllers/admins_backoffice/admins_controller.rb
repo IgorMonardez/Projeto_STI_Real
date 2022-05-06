@@ -16,8 +16,9 @@ module AdminsBackoffice
     def edit; end
 
     def update
+      set_admin
       respond_to do |format|
-        if @admin.update!(admin_params)
+        if @admin.update(admin_params)
           format.html { redirect_to admins_backoffice_admin_path(@admin), notice: 'Admins foi devidamente atualizado.' }
           format.json { render :show, status: :ok, location: @admin }
         else
@@ -28,7 +29,7 @@ module AdminsBackoffice
     end
 
     def destroy
-      set_admin
+      @admin = Admin.find(params[:admin_id])
       respond_to do |format|
         if @admin.update active: false
           format.html { redirect_to admins_backoffice_admins_path, notice: 'Admin foi devidamente atualizado.' }
@@ -41,7 +42,7 @@ module AdminsBackoffice
     end
 
     def reactive
-      set_admin
+      @admin = Admin.find(params[:admin_id])
       @admin.update active: true
       respond_to do |format|
         format.html { redirect_to admins_backoffice_admins_path, notice: 'Admin foi reativado com sucesso.' }
@@ -52,11 +53,11 @@ module AdminsBackoffice
     private
 
     def set_admin
-      @admin = Admin.find(params[:admin_id])
+      @admin = Admin.find(params[:id])
     end
 
     def admin_params
-      params.require(:admin).permit(:id, :email, :name, :iduff, :active)
+      params.require(:admin).permit(:admin_id, :id, :email, :name, :iduff, :active)
     end
   end
 end

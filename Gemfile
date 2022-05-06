@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -22,10 +23,13 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap', '~> 5.1.3'
 gem 'cancancan', '~> 1.9'
 gem 'devise'
-gem 'stimulus-rails'
 gem 'jquery-rails'
+gem 'sprockets-rails', require: 'sprockets/railtie'
+gem 'stimulus-rails'
+gem 'popper_js', '~> 2.9.3'
 
 # Use Active Storage
 
@@ -36,9 +40,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-
-  gem 'factory_bot'
-
 end
 
 group :development do
@@ -53,6 +54,7 @@ group :development do
 end
 
 group :test do
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~>5.0.0'
   gem 'rubocop'
   # Adds support for Capybara system testing and selenium driver
@@ -67,4 +69,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem "importmap-rails", "~> 1.0"
+gem 'importmap-rails', '~> 1.0'

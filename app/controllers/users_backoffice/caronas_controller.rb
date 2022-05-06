@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module UsersBackoffice
-  class CaronasController < ApplicationController
+  class CaronasController < UsersBackofficeController
     before_action :set_carona, only: %i[show edit update destroy]
 
     # GET /caronas or /caronas.json
@@ -17,7 +17,6 @@ module UsersBackoffice
     # GET /caronas/new
     def new
       @carona = Carona.new
-
     end
 
     # GET /caronas/1/edit
@@ -44,7 +43,7 @@ module UsersBackoffice
     def update
       set_carona
       respond_to do |format|
-        if @carona.update(carona_params)
+        if @carona.update(carona_params + current_user)
           format.html { redirect_to users_backoffice_carona_path(@carona), notice: 'Carona was successfully updated.' }
           format.json { render :show, status: :ok, location: @carona }
         else

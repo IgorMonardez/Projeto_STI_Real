@@ -2,7 +2,6 @@
   <% if @carona.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@carona.errors.count, "error") %> proibe essa carona de ser salva:</h2>
-
       <ul>
         <% @carona.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -17,29 +16,30 @@
   </div>
 
   <div class="field">
-    <%= form.label :qtd_passageiros %>
+    <%= form.label :quantidade_de_passageiros %>
     <%= form.number_field :qtd_passageiros %>
   </div>
 
   <div class="field">
-    <%= form.label :date_hour %>
+    <%= form.label :dia_e_hora %>
     <%= form.datetime_select :date_hour %>
   </div>
 
   <div class="field">
-    <%= form.check_box :campusUFF? %>
-    <%= form.label :campusUFF? %>
-  </div>
-
-  <div class="field">
-    <%= form.label :departure %>
+    <%= form.label :partida %>
     <%= form.text_field :departure %>
   </div>
 
   <div class="field">
-    <%= form.label :arrival %>
+    <%= form.label :chegada %>
     <%= form.text_field :arrival %>
   </div>
+
+  <div class="field">
+    <%= form.label :comentários %>
+    <%= form.text_field :comments %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>

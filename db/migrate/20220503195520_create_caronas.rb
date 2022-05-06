@@ -6,6 +6,7 @@ class CreateCaronas < ActiveRecord::Migration[6.1]
       t.datetime :date_hour
       t.string :departure
       t.string :arrival
+      t.string :comments
 
       t.timestamps
     end

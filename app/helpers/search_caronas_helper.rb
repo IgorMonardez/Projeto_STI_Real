@@ -1,0 +1,2 @@
+module SearchCaronasHelper
+end

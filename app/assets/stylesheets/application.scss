@@ -13,40 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-custom";
 
-body,ul,li,p {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    font-family: Arial;
-    font-size: 1.2rem;
+header{
+  background-color: black;
 }
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-header {
-    background: #a3f8ff;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-    text-decoration: none;
-}
-
-.menu{
-    display: flex;
-}
-
-.menu li{
-    margin-left: 10px;
-}
-
-.menu li a{
-    background: #a3f8ff;
-    display: block;
-    padding: 10px;
-}
-

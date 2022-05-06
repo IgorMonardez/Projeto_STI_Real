@@ -10,21 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_05_151500) do
+ActiveRecord::Schema.define(version: 2022_05_06_095126) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name", default: "", null: false
-    t.bigint "iduff", default: 1, null: false
-    t.boolean "active", default: true
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.bigint "iduff"
+    t.boolean "active", default: true
     t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["iduff"], name: "index_admins_on_iduff", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
@@ -46,36 +45,43 @@ ActiveRecord::Schema.define(version: 2022_05_05_151500) do
     t.datetime "date_hour"
     t.string "departure"
     t.string "arrival"
+    t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id", null: false
-    t.index ["users_id"], name: "index_caronas_on_users_id"
   end
 
   create_table "points", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "carona_id", null: false
+    t.bigint "carona_id"
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["carona_id"], name: "index_points_on_carona_id"
   end
 
+  create_table "search_caronas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "partida"
+    t.string "chegada"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_search_caronas_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "name", default: "", null: false
-    t.boolean "active", default: true
-    t.bigint "iduff", default: 2134, null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.bigint "iduff"
+    t.boolean "active", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["iduff"], name: "index_users_on_iduff", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "caronas", "users", column: "users_id"
   add_foreign_key "points", "caronas"
+  add_foreign_key "search_caronas", "users"
 end
