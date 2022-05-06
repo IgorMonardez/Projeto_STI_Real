@@ -1,10 +1,10 @@
-<%= form_with(model: search_carona) do |form| %>
-  <% if search_carona.errors.any? %>
+<%= form_with(model: [:users_backoffice_user, @search_carona]) do |form| %>
+  <% if @search_carona.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(search_carona.errors.count, "error") %> prohibited this search_carona from being saved:</h2>
+      <h2><%= pluralize(@search_carona.errors.count, "error") %> prohibited this search_carona from being saved:</h2>
 
       <ul>
-        <% search_carona.errors.each do |error| %>
+        <% @search_carona.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -19,11 +19,6 @@
   <div class="field">
     <%= form.label :chegada %>
     <%= form.text_field :chegada %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">

@@ -27,7 +27,7 @@ module UsersBackoffice
       respond_to do |format|
         if @search_carona.save
           format.html do
-            redirect_to search_carona_url(@search_carona), notice: 'Search carona was successfully created.'
+            redirect_to users_backoffice_user_search_carona_path(@search_carona), notice: 'Search carona was successfully created.'
           end
           format.json { render :show, status: :created, location: @search_carona }
         else
@@ -54,10 +54,11 @@ module UsersBackoffice
 
     # DELETE /search_caronas/1 or /search_caronas/1.json
     def destroy
+      @search_carona = SearchCarona.find(params[:search_carona_id])
       @search_carona.destroy
 
       respond_to do |format|
-        format.html { redirect_to search_caronas_url, notice: 'Search carona was successfully destroyed.' }
+        format.html { redirect_to users_backoffice_user_search_caronas_path(current_user), notice: 'Search carona was successfully destroyed.' }
         format.json { head :no_content }
       end
     end

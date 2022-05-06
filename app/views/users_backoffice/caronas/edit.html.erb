@@ -2,5 +2,5 @@
 
 <%= render 'form', carona: @carona %>
 
-<%= link_to 'Show', users_backoffice_carona_path(@carona) %> |
-<%= link_to 'Back', user_backoffice_caronas_path %>
+<%= link_to 'Show', users_backoffice_user_carona_path(current_user,@carona) %> |
+<%= link_to 'Back', users_backoffice_user_caronas_path(current_user) %>

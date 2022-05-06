@@ -15,5 +15,5 @@
   <%= @search_carona.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_search_carona_path(@search_carona) %> |
-<%= link_to 'Back', search_caronas_path %>
+<%= link_to 'Edit', edit_users_backoffice_user_search_carona_path(current_user, @search_carona) %> |
+<%= link_to 'Back', users_backoffice_user_search_caronas_path(current_user) %>

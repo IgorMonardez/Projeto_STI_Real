@@ -30,7 +30,7 @@ module UsersBackoffice
 
       respond_to do |format|
         if @carona.save
-          format.html { redirect_to users_backoffice_carona_path(@carona), notice: 'Carona was successfully created.' }
+          format.html { redirect_to users_backoffice_user_caronas_path, notice: 'Carona was successfully created.' }
           format.json { render :show, status: :created, location: @carona }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ module UsersBackoffice
     def update
       set_carona
       respond_to do |format|
-        if @carona.update(carona_params + current_user)
-          format.html { redirect_to users_backoffice_carona_path(@carona), notice: 'Carona was successfully updated.' }
+        if @carona.update(carona_params)
+          format.html { redirect_to users_backoffice_user_carona_path(@carona), notice: 'Carona was successfully updated.' }
           format.json { render :show, status: :ok, location: @carona }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -55,10 +55,11 @@ module UsersBackoffice
 
     # DELETE /caronas/1 or /caronas/1.json
     def destroy
+      @carona = Carona.find(params[:carona_id])
       @carona.destroy
 
       respond_to do |format|
-        format.html { redirect_to users_backoffice_caronas_path, notice: 'Carona was successfully destroyed.' }
+        format.html { redirect_to users_backoffice_user_caronas_path, notice: 'Carona was successfully destroyed.' }
         format.json { head :no_content }
       end
     end

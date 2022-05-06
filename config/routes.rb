@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :search_caronas
   namespace :site do
     get 'welcome/index'
   end
@@ -9,7 +8,12 @@ Rails.application.routes.draw do
     resources :users, only: %i[show edit] do
       resources :caronas do
         resources :points
-        get 'users_backoffice/desabilitar_carona/:carona_id', to: 'caronas#destroy', as: :destroy_carona
+        get 'users_backoffice/desabilitar_carona/:carona_id', to: 'caronas#destroy',
+                                                              as: :destroy_carona
+      end
+      resources :search_caronas do
+        get 'users_backoffice/desabilitar_procura_carona/:search_carona_id', to: 'search_caronas#destroy',
+                                                                             as: :search_carona
       end
     end
     get 'welcome/index'

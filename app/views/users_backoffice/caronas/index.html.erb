@@ -24,9 +24,9 @@
         <td><%= carona.departure %></td>
         <td><%= carona.arrival %></td>
         <td><%= carona.comments %></td>
-        <td><%= link_to 'Show', users_backoffice_carona(carona) %></td>
-        <td><%= link_to 'Edit', edit_users_backoffice_carona_path(carona) %></td>
-        <td><%= link_to 'Destroy', users_backoffice_carona_destroy_path(carona), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', users_backoffice_user_carona_path(current_user,carona) %></td>
+        <td><%= link_to 'Edit', edit_users_backoffice_user_carona_path(current_user,carona) %></td>
+        <td><%= link_to 'Destroy', users_backoffice_user_carona_destroy_carona_path(current_user,carona), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
