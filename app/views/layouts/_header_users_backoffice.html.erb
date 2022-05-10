@@ -3,9 +3,8 @@
     <%= image_tag('logo_uff.png',width: 70,role: 'img',class: "bi me-2", draggable: "true", alias: 'Logo da UFF') %>
   </a>
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><%= link_to 'Listar e adicionar Caronas',  users_backoffice_user_caronas_path(current_user), class: 'nav-link px-2 link-dark'%></li>
-      <li><%= link_to 'Procurar Caronas',  users_backoffice_user_search_caronas_path(current_user), class: 'nav-link px-2 link-dark' %></li>
-      <li> <%= link_to 'Página inicial', site_welcome_index_path, class: 'nav-link px-2 link-dark' %></li>
+      <li><a><%= link_to 'Listar e adicionar Caronas',  users_backoffice_user_caronas_path(current_user), class: 'nav-link px-2 link-dark'%></a></li>
+      <li><a><%= link_to 'Procurar Caronas',  users_backoffice_user_search_caronas_path(current_user), class: 'nav-link px-2 link-dark' %></a></li>
     </ul>
   <div class="col-md-3 text-end">
     <li><a><%= link_to 'Sair', destroy_user_session_path, method: :delete, class: "btn btn-primary" %></a></li>

@@ -17,4 +17,4 @@ require("jquery")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
+require("bootstrap-autocomplete")

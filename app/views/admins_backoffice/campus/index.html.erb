@@ -9,6 +9,7 @@
       <th>Bairro</th>
       <th>Cidade</th>
       <th>Cep</th>
+      <th>Ativo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= campu.bairro %></td>
         <td><%= campu.cidade %></td>
         <td><%= campu.cep %></td>
+        <td><%= campu.active %></td>
         <td><%= link_to 'Olhe', admins_backoffice_campu_path(campu) %></td>
         <td><%= link_to 'Edite', edit_admins_backoffice_campu_path(campu) %></td>
         <% if campu.active %>
@@ -40,6 +42,7 @@
     <th>Bairro</th>
     <th>Cidade</th>
     <th>Cep</th>
+    <th>Ativo</th>
     <th colspan="3"></th>
   </tr>
   </tfoot>

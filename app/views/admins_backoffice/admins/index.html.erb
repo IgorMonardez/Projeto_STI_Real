@@ -2,22 +2,22 @@
 <table id="example" class="table table-striped table-bordered" style="width:100%">
   <thead>
   <tr>
-    <th>ID</th>
     <th>Email</th>
     <th>Nome</th>
-    <th>iduff</th>
+    <th>Iduff</th>
+    <th>Ativo</th>
   </thead>
   <tbody>
   <% @admins.each do |admin| %>
     <tr>
-      <td><%= admin.id %></td>
       <td><%= admin.email %></td>
       <td><%= admin.name %></td>
       <td><%= admin.iduff %></td>
-      <td><%= link_to 'Olhe', admins_backoffice_admin_path(admin) %></td>
-      <td><%= link_to 'Edite', edit_admins_backoffice_admin_path(admin) %></td>
+      <td><%= admin.active.to_s %></td>
+      <td><%= link_to 'Olhe', admins_backoffice_admin_path(admin),class: "btn" %></td>
+      <td><%= link_to 'Edite', edit_admins_backoffice_admin_path(admin),class: "btn" %></td>
       <% if admin.active %>
-        <td><%= link_to 'Destrua',  admins_backoffice_admin_destroy_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to 'Desative',  admins_backoffice_admin_destroy_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
       <% else %>
         <td><%= link_to 'Reativar',  admins_backoffice_admin_reactive_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
       <% end %>

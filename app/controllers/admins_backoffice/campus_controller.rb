@@ -54,6 +54,7 @@ module AdminsBackoffice
     end
 
     def reactive
+      @campu = Campu.find(params[:campu_id])
       @campu.update active: true
 
       respond_to do |format|

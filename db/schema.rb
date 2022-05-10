@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_06_095126) do
+ActiveRecord::Schema.define(version: 2022_05_09_114452) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -18,22 +18,20 @@ ActiveRecord::Schema.define(version: 2022_05_06_095126) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.bigint "iduff"
+    t.string "iduff"
     t.boolean "active", default: true
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
   create_table "campus", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "address"
-    t.string "nome"
+    t.string "address", default: "", null: false
+    t.string "nome", default: "", null: false
     t.integer "numero"
-    t.string "bairro"
-    t.string "cidade"
-    t.integer "cep"
+    t.string "bairro", default: "", null: false
+    t.string "cidade", default: "", null: false
+    t.integer "cep", default: 0, null: false
     t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,6 +46,8 @@ ActiveRecord::Schema.define(version: 2022_05_06_095126) do
     t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_caronas_on_user_id"
   end
 
   create_table "points", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -73,10 +73,8 @@ ActiveRecord::Schema.define(version: 2022_05_06_095126) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.bigint "iduff"
+    t.string "iduff"
     t.boolean "active", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

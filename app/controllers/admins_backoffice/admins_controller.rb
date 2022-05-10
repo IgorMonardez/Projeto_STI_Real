@@ -2,7 +2,7 @@
 
 module AdminsBackoffice
   class AdminsController < AdminsBackofficeController
-    before_action :set_admin, only: %i[edit show update destroy reactive]
+    before_action :set_admin, only: %i[edit show]
     def index
       @admins = Admin.all
     end
@@ -16,7 +16,7 @@ module AdminsBackoffice
     def edit; end
 
     def update
-      set_admin
+      @admin = Admin.find(params[:admin_id])
       respond_to do |format|
         if @admin.update(admin_params)
           format.html { redirect_to admins_backoffice_admin_path(@admin), notice: 'Admins foi devidamente atualizado.' }

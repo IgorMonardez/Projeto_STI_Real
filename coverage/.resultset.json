@@ -1,40 +1,35 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/models/admin_spec.rb": {
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/models/campu_spec.rb": {
         "lines": [
-          1,
-          1,
+          null,
+          null,
           1,
           null,
           1,
           1,
           1,
-          0,
+          1,
+          1,
           null,
-          null,
-          1,
-          1,
-          1,
-          0,
-          0,
-          null,
-          1,
-          1,
-          0,
-          0,
-          null,
-          1,
-          1,
-          0,
-          0,
           null,
           null,
           1,
           1,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
           null,
           null,
           null
@@ -694,10 +689,10 @@
           null,
           1,
           1,
-          5,
-          5,
-          5,
-          5,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -707,11 +702,11 @@
           1,
           1,
           2,
-          2,
-          2,
-          2,
-          2,
-          2,
+          3,
+          3,
+          3,
+          3,
+          3,
           null,
           null,
           null
@@ -747,10 +742,10 @@
         "lines": [
           1,
           1,
-          5,
-          5,
-          5,
-          5,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -769,6 +764,11 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null,
           null,
           1,
@@ -809,9 +809,8 @@
           null,
           null,
           1,
+          1,
           null,
-          1,
-          1,
           null
         ]
       },
@@ -830,6 +829,9 @@
           null,
           null,
           1,
+          1,
+          null,
+          null,
           null,
           null
         ]
@@ -912,118 +914,15 @@
           null
         ]
       },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/models/campu_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
       "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/models/campu.rb": {
         "lines": [
           1,
           1,
           null
         ]
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/models/carona_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/models/carona.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/models/point_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/models/point.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/models/search_carona_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/models/search_carona.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/models/user_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
-          0,
-          0,
-          null,
-          1,
-          1,
-          0,
-          0,
-          null,
-          1,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1651833490
+    "timestamp": 1652141070
   },
   "Unknown Test Framework": {
     "coverage": {
@@ -1236,8 +1135,6 @@
           null,
           0,
           0,
-          0,
-          0,
           0
         ],
         "branches": {
@@ -1245,6 +1142,10 @@
       },
       "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/models/admin.rb": {
         "lines": [
+          0,
+          null,
+          null,
+          0,
           0,
           null,
           null,
@@ -1479,6 +1380,7 @@
           null,
           0,
           0,
+          0,
           null,
           0,
           0,
@@ -1553,16 +1455,6 @@
           null,
           0,
           0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
           0
         ],
         "branches": {
@@ -1570,6 +1462,82 @@
       },
       "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/users_backoffice_controller.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/search_caronas_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
           0,
           0,
           0,
@@ -1637,6 +1605,7 @@
           0,
           null,
           null,
+          0,
           0,
           0,
           null,
@@ -1724,6 +1693,7 @@
           null,
           0,
           0,
+          0,
           null,
           0,
           0,
@@ -1790,6 +1760,6 @@
         }
       }
     },
-    "timestamp": 1651833384
+    "timestamp": 1652117346
   }
 }

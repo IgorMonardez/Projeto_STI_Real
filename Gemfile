@@ -26,10 +26,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 5.1.3'
 gem 'cancancan', '~> 1.9'
 gem 'devise'
+gem 'devise_token_auth'
 gem 'jquery-rails'
+gem 'popper_js', '~> 2.9.3'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stimulus-rails'
-gem 'popper_js', '~> 2.9.3'
 
 # Use Active Storage
 

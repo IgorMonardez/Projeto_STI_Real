@@ -6,12 +6,12 @@ module UsersBackoffice
 
     # GET /caronas or /caronas.json
     def index
-      @caronas = Carona.all.order(:created_at)
+      @caronas = Carona.where(user_id: current_user).order(created_at: :desc)
     end
 
     # GET /caronas/1 or /caronas/1.json
     def show
-      set_carona
+      @carona = Carona.find(params[:id])
     end
 
     # GET /caronas/new
@@ -27,6 +27,7 @@ module UsersBackoffice
     # POST /caronas or /caronas.json
     def create
       @carona = Carona.new(carona_params)
+      @carona.user = current_user
 
       respond_to do |format|
         if @carona.save
@@ -44,7 +45,9 @@ module UsersBackoffice
       set_carona
       respond_to do |format|
         if @carona.update(carona_params)
-          format.html { redirect_to users_backoffice_user_carona_path(@carona), notice: 'Carona was successfully updated.' }
+          format.html do
+            redirect_to users_backoffice_user_carona_path(@carona), notice: 'Carona was successfully updated.'
+          end
           format.json { render :show, status: :ok, location: @carona }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -65,8 +68,6 @@ module UsersBackoffice
     end
 
     private
-
-
 
     # Use callbacks to share common setup or constraints between actions.
     def set_carona
