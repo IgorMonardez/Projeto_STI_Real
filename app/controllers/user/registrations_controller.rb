@@ -2,19 +2,26 @@
 
 module User
   class RegistrationsController < Devise::RegistrationsController
-    # before_action :configure_sign_up_params, only: [:create]
-    # before_action :configure_account_update_params, only: [:update]
-    before_action :configure_permitted_parameters
+    before_action :configure_sign_up_params, only: [:create]
+    before_action :configure_account_update_params, only: [:update]
 
     # GET /resource/sign_up
     # def new
     #   super
     # end
 
-    # POST /resource
-    # def create
-    #   super
-    # end
+    # POST /
+    def create
+      @user = User.new(configure_sign_up_params)
+
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to site_welcome_index_path, notice: 'Usuário criado com sucesso' }
+        else
+          format.html { render :'users/registrations/new', status: :unprocessable_entity }
+        end
+      end
+    end
 
     # GET /resource/edit
     # def edit
@@ -40,17 +47,17 @@ module User
     #   super
     # end
 
-    # protected
+    protected
 
     # If you have extra params to permit, append them to the sanitizer.
-    # def configure_sign_up_params
-    #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-    # end
+    def configure_sign_up_params
+      devise_parameter_sanitizer.permit(:sign_up, keys: %i[iduff name active])
+    end
 
     # If you have extra params to permit, append them to the sanitizer.
-    # def configure_account_update_params
-    #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-    # end
+    def configure_account_update_params
+      devise_parameter_sanitizer.permit(:account_update, keys: %i[iduff name active])
+    end
 
     # The path used after sign up.
     # def after_sign_up_path_for(resource)
@@ -61,11 +68,5 @@ module User
     # def after_inactive_sign_up_path_for(resource)
     #   super(resource)
     # end
-    protected
-
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: %i[iduff])
-      devise_parameter_sanitizer.permit(:account_update_params, keys: %i[iduff])
-    end
   end
 end

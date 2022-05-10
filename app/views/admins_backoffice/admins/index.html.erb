@@ -15,11 +15,13 @@
       <td><%= admin.iduff %></td>
       <td><%= admin.active.to_s %></td>
       <td><%= link_to 'Olhe', admins_backoffice_admin_path(admin),class: "btn" %></td>
-      <td><%= link_to 'Edite', edit_admins_backoffice_admin_path(admin),class: "btn" %></td>
-      <% if admin.active %>
-        <td><%= link_to 'Desative',  admins_backoffice_admin_destroy_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
-      <% else %>
-        <td><%= link_to 'Reativar',  admins_backoffice_admin_reactive_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+      <% if admin!= current_admin %>
+        <td><%= link_to 'Edite', edit_admins_backoffice_admin_path(admin),class: "btn" %></td>
+        <% if admin.active %>
+          <td><%= link_to 'Desative',  admins_backoffice_admin_destroy_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+        <% else %>
+          <td><%= link_to 'Reativar',  admins_backoffice_admin_reactive_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+        <% end %>
       <% end %>
       </tr>
   <% end %>

@@ -36,12 +36,21 @@
   </div>
 
   <div class="field">
-    Possui pontos intermediários: clique <%= link_to 'Aqui', new_users_backoffice_user_carona_point_path(current_user,@carona.id) %>
+    <%= form.label :comentarios %>
+    <%= form.text_field :comments %>
   </div>
 
-  <div class="field">
-    <%= form.label :comentários %>
-    <%= form.text_field :comments %>
+  <h3> Pontos intermediários</h3>
+
+  <div id="points">
+    <%= form.fields_for :points do |points| %>
+      <div class="field">
+        <%= render 'points_fields',  f: points %>
+      </div>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Adicionar Parada', form, :points, partial: 'points_fields', render_options: { wrapper: 'bootstrap' } %>
+    </div>
   </div>
 
   <div class="actions">

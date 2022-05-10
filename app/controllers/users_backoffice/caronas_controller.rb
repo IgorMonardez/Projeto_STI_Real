@@ -2,17 +2,18 @@
 
 module UsersBackoffice
   class CaronasController < UsersBackofficeController
-    before_action :set_carona, only: %i[show edit update destroy]
+    before_action :set_carona, only: %i[show edit update]
 
     # GET /caronas or /caronas.json
     def index
       @caronas = Carona.where(user_id: current_user).order(created_at: :desc)
-      @points = Point.where(carona_id: @caronas.ids)
+      @points = Point.where(carona_id: cookies[:cookie_id])
     end
 
     # GET /caronas/1 or /caronas/1.json
     def show
       @carona = Carona.find(params[:id])
+      @point = @carona.points
     end
 
     # GET /caronas/new
@@ -77,7 +78,8 @@ module UsersBackoffice
 
     # Only allow a list of trusted parameters through.
     def carona_params
-      params.require(:carona).permit(:preco, :qtd_passageiros, :date_hour, :departure, :arrival, :user_id)
+      params.require(:carona).permit(:preco, :qtd_passageiros, :date_hour, :departure, :arrival, :user_id,
+                                     points_attributes: [:id, :address, :_destroy])
     end
   end
 end

@@ -17,13 +17,16 @@
       <td><%= user.name %></td>
       <td><%= user.iduff %></td>
       <td><%= user.active %></td>
+
       <td><%= link_to 'Olhar', admins_backoffice_user_path(user),class: "btn" %></td>
-      <td><%= link_to 'Editar', edit_admins_backoffice_user_path(user),class: "btn" %></td>
-      <% if user.active %>
-        <td><%= link_to 'Desativar',  admins_backoffice_user_destroy_user_path(user),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
-      <% else%>
-        <td><%= link_to 'Reative',  admins_backoffice_user_reactive_user_path(user),class: "btn" , data: { confirm: 'Tem certeza?' } %></td>
-      <%end %>
+      <% if user != current_user %>
+        <td><%= link_to 'Editar', edit_admins_backoffice_user_path(user),class: "btn" %></td>
+        <% if user.active %>
+          <td><%= link_to 'Desativar',  admins_backoffice_user_destroy_user_path(user),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+        <% else%>
+          <td><%= link_to 'Reative',  admins_backoffice_user_reactive_user_path(user),class: "btn" , data: { confirm: 'Tem certeza?' } %></td>
+        <%end %>
+      <% end %>
     </tr>
   <% end %>
   <tfoot>

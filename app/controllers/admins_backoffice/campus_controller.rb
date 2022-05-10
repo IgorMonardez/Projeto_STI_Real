@@ -30,7 +30,7 @@ module AdminsBackoffice
 
       respond_to do |format|
         if @campu.save
-          format.html { redirect_to admins_backoffice_campu_path(@campu), notice: 'Campus foi criado com sucesso.' }
+          format.html { redirect_to admins_backoffice_campu_path(@campu), notice: 'Campus criado com sucesso.' }
           format.json { render :show, status: :created, location: @campu }
         else
           format.html { render :new, status: :unprocessable_entity }
