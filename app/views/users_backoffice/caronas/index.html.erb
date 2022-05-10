@@ -9,7 +9,8 @@
       <th>Quantidade de passageiros</th>
       <th>Hora e data</th>
       <th>Partida</th>
-      <th>Chega</th>
+      <th>Pontos intermediários</th>
+      <th>Chegada</th>
       <th>Comentários</th>
       <th colspan="3"></th>
     </tr>
@@ -22,6 +23,9 @@
         <td><%= carona.qtd_passageiros %></td>
         <td><%= carona.date_hour %></td>
         <td><%= carona.departure %></td>
+        <% @points.each do |point| %>
+          <td><%= point.departure %></td>
+        <% end %>
         <td><%= carona.arrival %></td>
         <td><%= carona.comments %></td>
         <td><%= link_to 'Show', users_backoffice_user_carona_path(current_user,carona) %></td>

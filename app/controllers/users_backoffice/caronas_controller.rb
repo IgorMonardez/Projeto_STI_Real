@@ -7,6 +7,7 @@ module UsersBackoffice
     # GET /caronas or /caronas.json
     def index
       @caronas = Carona.where(user_id: current_user).order(created_at: :desc)
+      @points = Point.where(carona_id: @caronas.ids)
     end
 
     # GET /caronas/1 or /caronas/1.json
