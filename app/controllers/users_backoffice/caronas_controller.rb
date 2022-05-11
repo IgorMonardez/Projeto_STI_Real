@@ -27,7 +27,7 @@ module UsersBackoffice
     # GET /caronas/new
     def new
       @carona = Carona.new
-      5.times { @carona.points.build }
+      @points = @carona.points.build
     end
 
     # GET /caronas/1/edit
@@ -89,7 +89,7 @@ module UsersBackoffice
     # Only allow a list of trusted parameters through.
     def carona_params
       params.require(:carona).permit(:preco, :qtd_passageiros, :date_hour, :departure, :arrival, :user_id,
-                                     points_attributes: %i[id address _destroy])
+                                     points_attributes: [:id, :address, :_destroy])
     end
   end
 end

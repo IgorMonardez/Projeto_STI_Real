@@ -32,40 +32,42 @@
 
   <div class="field">
     <%= form.label :partida %>
-    <%= form.select :departure, @campus %>
+    <%= form.collection_select :departure, Campu.all, :nome, :nome_campus%>
+
   </div>
 
   <% if params[:campus1] %>
 
+  <% else %>
+    <div class="field">
+      <%= form.label :partida %>
+      <%= form.text_field :departure %>
+    </div>
 
+    <div class="field">
+      <%= form.label :chegada %>
+      <%= form.text_field :arrival %>
+    </div>
+
+    <div class="field">
+      <%= form.label :comentarios %>
+      <%= form.text_field :comments %>
+    </div>
+
+    <h3> Pontos intermediários</h3>
+
+    <div>
+      <%= form.fields_for :points do |point| %>
+        <%= render 'point_fields',  :f => point %>
+      <% end %>
+      <div>
+        <br>
+        <%= link_to_add_association 'Adicionar Parada', form, :points %>
+      </div>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :partida %>
-    <%= form.text_field :departure %>
-  </div>
 
-  <div class="field">
-    <%= form.label :chegada %>
-    <%= form.text_field :arrival %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comentarios %>
-    <%= form.text_field :comments %>
-  </div>
-
-  <h3> Pontos intermediários</h3>
-
-  <div>
-    <%= form.fields_for :points do |point| %>
-        <%= render 'point_fields',  :f => point %>
-    <% end %>
-    <div>
-      <br>
-      <%= link_to_add_association 'Adicionar Parada', form, :points %>
-    </div>
-  </div>
 
   <div class="actions">
     <%= form.submit %>
