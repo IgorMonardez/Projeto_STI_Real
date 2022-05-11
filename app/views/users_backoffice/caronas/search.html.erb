@@ -1,0 +1,25 @@
+<h3>Resultado da procura por carona</h3>
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+  <thead>
+  <tr>
+    <th>Preço</th>
+    <th>Passageiros</th>
+    <th>Hora e data</th>
+    <th>Partida</th>
+    <th>Chegada</th>
+    <th>Comentários</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
+  <tr>
+      <td>  <%= result.preco %> </td>
+      <td>  <%= result.qtd_passageiros %> </td>
+      <td>  <%= result.date_hour %> </td>
+      <td>  <%= result.departure %> </td>
+      <td>  <%= result.arrival %> </td>
+  </tr>
+    <% end %>
+  </tbody>
+</table>

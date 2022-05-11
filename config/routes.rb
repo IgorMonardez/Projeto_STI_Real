@@ -11,10 +11,7 @@ Rails.application.routes.draw do
         get 'users_backoffice/desabilitar_carona/:carona_id', to: 'caronas#destroy',
                                                               as: :destroy_carona
       end
-      resources :search_caronas do
-        get 'users_backoffice/desabilitar_procura_carona/:search_carona_id', to: 'search_caronas#destroy',
-                                                                             as: :search_carona
-      end
+      get '/search', to: 'caronas#search', as: :search_carona
     end
     get 'welcome/index'
   end

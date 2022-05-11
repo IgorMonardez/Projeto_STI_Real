@@ -6,8 +6,17 @@ module UsersBackoffice
 
     # GET /caronas or /caronas.json
     def index
-      @caronas = Carona.where(user_id: current_user).order(created_at: :desc)
-      @points = Point.where(carona_id: cookies[:cookie_id])
+      @caronas = Carona.all.where(user_id: current_user).order(created_at: :desc)
+      @points = Point.all.where(carona_id: cookies[:cookie_id])
+    end
+
+    def search
+      if params[:search].blank?
+        redirect_to users_backoffice_welcome_index_path and nil
+      else
+        @parameter = params[:search].downcase
+        @results = Carona.all.where('lower(arrival) LIKE :search', search: "%#{@parameter}")
+      end
     end
 
     # GET /caronas/1 or /caronas/1.json
@@ -33,7 +42,7 @@ module UsersBackoffice
 
       respond_to do |format|
         if @carona.save
-          format.html { redirect_to users_backoffice_user_caronas_path, notice: 'Carona was successfully created.' }
+          format.html { redirect_to users_backoffice_user_caronas_path, notice: 'Carona foi criada com sucesso.' }
           format.json { render :show, status: :created, location: @carona }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -79,7 +88,7 @@ module UsersBackoffice
     # Only allow a list of trusted parameters through.
     def carona_params
       params.require(:carona).permit(:preco, :qtd_passageiros, :date_hour, :departure, :arrival, :user_id,
-                                     points_attributes: [:id, :address, :_destroy])
+                                     points_attributes: %i[id address _destroy])
     end
   end
 end
