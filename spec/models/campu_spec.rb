@@ -3,13 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe Campu, type: :model do
-  context 'Cenário 1' do
-    it 'atributos aleatórios' do
+  context 'Cenário 1 - Inclusão de' do
+    it 'Campus com sucesso' do
       campus = build(:campu)
       expect(campus).to be_valid
     end
   end
-  context 'Cenário 2' do
+  context 'Cenário 2 - Inclusão de campus sem o preenchimento de campos obrigatórios' do
     it 'Endereço null' do
       campus = build(:campu, address: nil)
       expect(campus.valid?).to be(false)
@@ -35,7 +35,7 @@ RSpec.describe Campu, type: :model do
       expect(campus.valid?).to be(false)
     end
   end
-  context 'Cenário 3' do
+  context 'Cenário 3 - Inclusão de ' do
     it 'Texto no CEP' do
       campus = build(:campu, cep: Faker::Address.name)
       expect(campus.valid?).to be(false)

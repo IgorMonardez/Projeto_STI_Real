@@ -11,6 +11,17 @@ module AdminsBackoffice
       @admin = Admin.new
     end
 
+    def search
+      if params[:search].blank?
+        redirect_to admins_backoffice_admins_path and nil
+      else
+        @parameter = params[:search]
+        @results = Admin.all.where(
+          'lower(name) LIKE :search OR lower(iduff) LIKE :search OR lower(email) LIKE :search', "%#{@parameter}"
+        )
+      end
+    end
+
     def show; end
 
     def edit; end

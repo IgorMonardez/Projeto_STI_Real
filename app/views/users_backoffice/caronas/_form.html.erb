@@ -26,6 +26,21 @@
   </div>
 
   <div class="field">
+    <%= label_tag(:campus1, "Campus") %>
+    <%= check_box 'campus1', 'result', {},1,0 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :partida %>
+    <%= form.select :departure, @campus %>
+  </div>
+
+  <% if params[:campus1] %>
+
+
+  <% end %>
+
+  <div class="field">
     <%= form.label :partida %>
     <%= form.text_field :departure %>
   </div>
@@ -42,14 +57,13 @@
 
   <h3> Pontos intermediários</h3>
 
-  <div id="points">
-    <%= form.fields_for :points do |points| %>
-      <div class="field">
-        <%= render 'points_fields',  f: points %>
-      </div>
+  <div>
+    <%= form.fields_for :points do |point| %>
+        <%= render 'point_fields',  :f => point %>
     <% end %>
-    <div class="links">
-      <%= link_to_add_association 'Adicionar Parada', form, :points, partial: 'points_fields', render_options: { wrapper: 'bootstrap' } %>
+    <div>
+      <br>
+      <%= link_to_add_association 'Adicionar Parada', form, :points %>
     </div>
   </div>
 

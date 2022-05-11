@@ -7,7 +7,6 @@ module UsersBackoffice
     # GET /caronas or /caronas.json
     def index
       @caronas = Carona.all.where(user_id: current_user).order(created_at: :desc)
-      @points = Point.all.where(carona_id: cookies[:cookie_id])
     end
 
     def search
@@ -28,6 +27,7 @@ module UsersBackoffice
     # GET /caronas/new
     def new
       @carona = Carona.new
+      5.times { @carona.points.build }
     end
 
     # GET /caronas/1/edit
@@ -39,13 +39,14 @@ module UsersBackoffice
     def create
       @carona = Carona.new(carona_params)
       @carona.user = current_user
+      @campus = Campu.all
 
       respond_to do |format|
         if @carona.save
           format.html { redirect_to users_backoffice_user_caronas_path, notice: 'Carona foi criada com sucesso.' }
           format.json { render :show, status: :created, location: @carona }
         else
-          format.html { render :new, status: :unprocessable_entity }
+          format.html { render action: :new, status: :unprocessable_entity }
           format.json { render json: @carona.errors, status: :unprocessable_entity }
         end
       end

@@ -25,10 +25,11 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 5.1.3'
 gem 'cancancan', '~> 1.9'
+# Unobtrusive nested forms handling, using jQuery. Use this & discover cocoon-heaven.
 gem 'cocoon'
+
 gem 'devise'
 gem 'devise_token_auth'
-gem 'jquery-rails'
 gem 'popper_js', '~> 2.9.3'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stimulus-rails'

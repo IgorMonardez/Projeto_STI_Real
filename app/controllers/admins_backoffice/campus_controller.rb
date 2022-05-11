@@ -24,6 +24,13 @@ module AdminsBackoffice
       set_campu
     end
 
+    def search
+      @parameter =  params[:search]
+      @results = Campu.where(
+        'lower(name) LIKE :search', "%#{@parameter}"
+      )
+    end
+
     # POST /campus or /campus.json
     def create
       @campu = Campu.new(campu_params)
