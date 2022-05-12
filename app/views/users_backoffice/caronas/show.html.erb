@@ -21,6 +21,13 @@
 </p>
 
 <p>
+  <strong>Pontos intermediários:</strong>
+<% Point.all.where(carona_id: @carona.id).each do |point| %>
+  <%= point.address %><br>
+<% end %>
+</p>
+
+<p>
   <strong>Arrival:</strong>
   <%= @carona.arrival %>
 </p>

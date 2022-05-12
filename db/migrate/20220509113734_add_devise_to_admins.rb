@@ -32,9 +32,6 @@ class AddDeviseToAdmins < ActiveRecord::Migration[6.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :name
-      t.string :iduff
-      t.boolean :active, default: true
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false

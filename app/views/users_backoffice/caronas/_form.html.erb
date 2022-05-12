@@ -25,51 +25,80 @@
     <%= form.datetime_select :date_hour %>
   </div>
 
-  <div class="field">
-    <%= label_tag(:campus1, "Campus") %>
-    <%= check_box 'campus1', 'result', {},1,0 %>
-  </div>
+  <!-- Checkbox que chama -->
 
   <div class="field">
-    <%= form.label :partida %>
-    <%= form.collection_select :departure, Campu.all, :nome, :nome_campus%>
-
+    <label for="campusCheck">Campus:</label>
+    <input type="checkbox" id="campusCheck" onclick="campusClick()">
   </div>
 
-  <% if params[:campus1] %>
-
-  <% else %>
+  <div id="primeiro-click" style="display: none">
     <div class="field">
       <%= form.label :partida %>
-      <%= form.text_field :departure %>
+      <%= form.collection_select :departure, Campu.all, :nome, :nome_was %>
     </div>
-
-    <div class="field">
-      <%= form.label :chegada %>
-      <%= form.text_field :arrival %>
-    </div>
-
-    <div class="field">
-      <%= form.label :comentarios %>
-      <%= form.text_field :comments %>
-    </div>
-
-    <h3> Pontos intermediários</h3>
 
     <div>
       <%= form.fields_for :points do |point| %>
         <%= render 'point_fields',  :f => point %>
       <% end %>
       <div>
-        <br>
         <%= link_to_add_association 'Adicionar Parada', form, :points %>
       </div>
     </div>
-  <% end %>
 
-
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="field">
+      <%= form.label :chegada %>
+      <%= form.text_field :arrival %>
+    </div>
   </div>
+
+  <div id="segundo-click"   style="display: none">
+    <div class="field">
+      <%= form.label :partida %>
+      <%= form.text_field :departure %>
+    </div>
+
+
+
+    <div>
+      <%= form.fields_for :points do |point| %>
+        <%= render 'point_fields',  :f => point %>
+      <% end %>
+      <div>
+        <%= link_to_add_association 'Adicionar Parada', form, :points %>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <%= form.label :chegada %>
+      <%= form.collection_select :arrival, Campu.all, :nome, :nome_was %>
+    </div>
+  </div>
+
+<div class="field">
+  <%= form.label :comentarios %>
+  <%= form.text_field :comments %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>
+
+
+<script>
+  function campusClick() {
+      var checkbox = document.getElementById("campusCheck");
+      var with_click = document.getElementById("primeiro-click");
+      var without_click = document.getElementById("segundo-click")
+      if(checkbox.checked === true){
+          with_click.style.display = "block";
+          without_click.style.display = "none"
+      } else {
+          with_click.style.display = "none";
+          without_click.style.display = "block";
+      }
+  }
+</script>
