@@ -1,7 +1,15 @@
 <div class="nested-fields">
-  <div class="field">
-    <%= f.label :paradas %>
-    <%= f.text_field :address %>
-    <%= link_to_remove_association 'Remover parada', f %>
+  <div class="row">
+    <div class="col">
+      <%= f.label :parada %>
+      <%= f.text_field :address, autocomplete: false, class: "form-control" %>
+    </div>
+    <div class="col">
+      <%= f.label :bairro_parada %>
+      <%= f.text_field :bairro, autocomplete: false, class: "form-control" %>
+    </div>
   </div>
+    <div>
+      <%= link_to_remove_association 'Remover parada', f, class: "btn btn-primary" %>
+    </div>
 </div>

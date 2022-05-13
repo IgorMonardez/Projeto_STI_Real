@@ -9,96 +9,66 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-sm-4">
+        <%= form.label :dia_e_hora %>
+        <%= form.datetime_local_field :date_hour, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :preco %>
-    <%= form.number_field :preco %>
+    <div class="col-sm-2">
+      <%= form.label :preco %>
+      <%= form.number_field :preco, autocomplete: false, class: "form-control" %>
+    </div>
+
+    <div class="col-sm-2">
+      <%= form.label :passageiros %>
+      <%= form.number_field :qtd_passageiros , autocomplete: false, class: "form-control"%>
+    </div>
+
+    <div class="col">
+      <%= form.label :comentarios %>
+      <%= form.text_field :comments, autocomplete: false, class: "form-control" %>
+    </div>
+
   </div>
-
-  <div class="field">
-    <%= form.label :quantidade_de_passageiros %>
-    <%= form.number_field :qtd_passageiros %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dia_e_hora %>
-    <%= form.datetime_select :date_hour %>
-  </div>
-
-  <!-- Checkbox que chama -->
-
-  <div class="field">
-    <label for="campusCheck">Campus:</label>
-    <input type="checkbox" id="campusCheck" onclick="campusClick()">
-  </div>
-
-  <div id="primeiro-click" style="display: none">
-    <div class="field">
+  <div class="row">
+    <div class="col">
       <%= form.label :partida %>
-      <%= form.collection_select :departure, Campu.all, :nome, :nome_was %>
+      <%= form.text_field :departure, autocomplete: false, class: "form-control" %>
     </div>
 
-    <div>
-      <%= form.fields_for :points do |point| %>
-        <%= render 'point_fields',  :f => point %>
-      <% end %>
-      <div>
-        <%= link_to_add_association 'Adicionar Parada', form, :points %>
-      </div>
-    </div>
-
-    <div class="field">
-      <%= form.label :chegada %>
-      <%= form.text_field :arrival %>
+    <div class="col">
+      <%= form.label :bairro_partida %>
+      <%= form.text_field :bairro_departure, autocomplete: false, class: "form-control" %>
     </div>
   </div>
 
-  <div id="segundo-click"   style="display: none">
-    <div class="field">
-      <%= form.label :partida %>
-      <%= form.text_field :departure %>
-    </div>
-
-
-
-    <div>
-      <%= form.fields_for :points do |point| %>
-        <%= render 'point_fields',  :f => point %>
-      <% end %>
-      <div>
-        <%= link_to_add_association 'Adicionar Parada', form, :points %>
-      </div>
-    </div>
-
-
-    <div class="field">
+  <div class="row">
+    <div class="col">
       <%= form.label :chegada %>
-      <%= form.collection_select :arrival, Campu.all, :nome, :nome_was %>
+      <%= form.text_field :arrival, autocomplete: false, class: "form-control" %>
+    </div>
+
+    <div class="col">
+      <%= form.label :bairro_chegada %>
+      <%= form.text_field :bairro_arrival, autocomplete: false, class: "form-control" %>
     </div>
   </div>
 
-<div class="field">
-  <%= form.label :comentarios %>
-  <%= form.text_field :comments %>
-</div>
+  <div class="row">
 
-<div class="actions">
-  <%= form.submit %>
-</div>
+    <%= form.fields_for :points do |point| %>
+      <%= render 'point_fields',  :f => point %>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to_add_association 'Adicionar Parada', form, :points, class: "btn btn-primary"%>
+  </div>
+
+
+  <div class="row">
+    <div class="actions ">
+      <%= form.submit "Criar carona", class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
-
-
-<script>
-  function campusClick() {
-      var checkbox = document.getElementById("campusCheck");
-      var with_click = document.getElementById("primeiro-click");
-      var without_click = document.getElementById("segundo-click")
-      if(checkbox.checked === true){
-          with_click.style.display = "block";
-          without_click.style.display = "none"
-      } else {
-          with_click.style.display = "none";
-          without_click.style.display = "block";
-      }
-  }
-</script>

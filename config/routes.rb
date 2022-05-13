@@ -28,9 +28,9 @@ Rails.application.routes.draw do
       get 'admins_backoffice/desabilitar_admin/:admin_id', to: 'admins#destroy', as: :destroy_admin
       get 'admins_backoffice/reativar_admin/:admin_id', to: 'admins#reactive', as: :reactive_admin
     end
-    get 'welcome/index'
     get '/search_admin', to: 'admins#search', as: :search_admin
     get '/search_user', to: 'users#search', as: :search_user
+    get 'welcome/index'
   end
   devise_for :users
   devise_scope :user do

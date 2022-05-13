@@ -3,6 +3,7 @@
 module AdminsBackoffice
   class UsersController < AdminsBackofficeController
     before_action :set_user, only: %i[update destroy reactive]
+    before_action :search_params, only: %i[search]
 
     def index
       @users = User.all
@@ -14,6 +15,14 @@ module AdminsBackoffice
 
     def edit
       @user = User.find(params[:id])
+    end
+
+    def search
+      if search_params.length >= 3
+        byebug
+        @result = User.where('lower(name) LIKE? ', "%"+params[:query]+"%")
+        render json: @result, status: :ok
+      end
     end
 
     def show
@@ -72,6 +81,10 @@ module AdminsBackoffice
 
     def user_params
       params.require(:user).permit(:id, :email, :name, :iduff, :password, :password_confirmation)
+    end
+
+    def search_params
+      params.permit(:query)
     end
   end
 end

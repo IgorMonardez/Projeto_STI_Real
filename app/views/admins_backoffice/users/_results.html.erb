@@ -1,0 +1,38 @@
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+  <thead>
+  <tr>
+    <th>Email</th>
+    <th>Nome</th>
+    <th>iduff</th>
+    <th>Ativo</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.name %></td>
+      <td><%= user.iduff %></td>
+      <td><%= user.active %></td>
+
+      <td><%= link_to 'Olhar', admins_backoffice_user_path(user),class: "btn" %></td>
+      <% if user != current_user %>
+        <td><%= link_to 'Editar', edit_admins_backoffice_user_path(user),class: "btn" %></td>
+        <% if user.active %>
+          <td><%= link_to 'Desativar',  admins_backoffice_user_destroy_user_path(user),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+        <% else%>
+          <td><%= link_to 'Reative',  admins_backoffice_user_reactive_user_path(user),class: "btn" , data: { confirm: 'Tem certeza?' } %></td>
+        <%end %>
+      <% end %>
+    </tr>
+  <% end %>
+  <tfoot>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Nome</th>
+    <th>iduff</th>
+
+  </tr>
+  </tfoot>
+  </table>

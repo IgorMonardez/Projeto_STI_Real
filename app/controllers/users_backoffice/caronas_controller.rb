@@ -10,11 +10,14 @@ module UsersBackoffice
     end
 
     def search
-      if params[:search].blank?
+      if params[:departure].blank? && params[:arrival].blank?
         redirect_to users_backoffice_welcome_index_path and nil
       else
-        @parameter = params[:search].downcase
-        @results = Carona.all.where('lower(arrival) LIKE :search', search: "%#{@parameter}")
+        @departure = params[:departure].downcase
+        @arrival = params[:arrival].downcase
+        @results = Carona.where(
+          'lower(bairro_departure) = :departure OR lower(bairro_arrival) = :arrival', departure: @departure, arrival: @arrival
+        )
       end
     end
 
@@ -89,7 +92,8 @@ module UsersBackoffice
     # Only allow a list of trusted parameters through.
     def carona_params
       params.require(:carona).permit(:preco, :qtd_passageiros, :date_hour, :departure, :arrival, :user_id,
-                                     points_attributes: [:id, :address, :_destroy])
+                                     :bairro_departure, :bairro_arrival,
+                                     points_attributes: %i[id address _destroy])
     end
   end
 end

@@ -25,7 +25,8 @@ module AdminsBackoffice
     end
 
     def search
-      @parameter =  params[:search]
+      @departure =  params[:departure]
+      @parameter
       @results = Campu.where(
         'lower(name) LIKE :search', "%#{@parameter}"
       )

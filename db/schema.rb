@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_11_235630) do
+ActiveRecord::Schema.define(version: 2022_05_13_112355) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_235630) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.string "bairro_departure"
+    t.string "bairro_arrival"
     t.index ["user_id"], name: "index_caronas_on_user_id"
   end
 
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 2022_05_11_235630) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "bairro"
     t.index ["carona_id"], name: "index_points_on_carona_id"
   end
 

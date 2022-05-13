@@ -22,8 +22,14 @@
         <td><%= carona.preco %></td>
         <td><%= carona.qtd_passageiros %></td>
         <td><%= carona.date_hour %></td>
-        <td><%= carona.departure %></td>
-        <td><%= carona.arrival %></td>
+        <td>
+          <%= carona.departure %><br>
+          <strong><%= carona.bairro_departure %></strong>
+        </td>
+        <td>
+          <%= carona.arrival %><br>
+          <strong><%= carona.bairro_arrival %></strong>
+        </td>
         <td>
         <% Point.all.where(carona_id: carona.id).each do |point| %>
           <%= point.address %><br> <br>
