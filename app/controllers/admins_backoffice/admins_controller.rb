@@ -22,12 +22,25 @@ module AdminsBackoffice
       end
     end
 
+    def create
+      @admin = Admin.new(admin_params)
+      respond_to do |format|
+        if @admin.save
+          format.html { redirect_to admins_backoffice_admin_path(@admin), notice: 'Admin foi criado com sucesso.' }
+          format.json { render :show, status: :created, location: @admin }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @admin.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
     def show; end
 
     def edit; end
 
     def update
-      @admin = Admin.find(params[:admin_id])
+      set_admin
       respond_to do |format|
         if @admin.update(admin_params)
           format.html { redirect_to admins_backoffice_admin_path(@admin), notice: 'Admins foi devidamente atualizado.' }
@@ -68,7 +81,7 @@ module AdminsBackoffice
     end
 
     def admin_params
-      params.require(:admin).permit(:admin_id, :id, :email, :name, :iduff, :active)
+      params.require(:admin).permit(:admin_id, :id, :email, :name, :iduff, :active, :password, :password_confirmation)
     end
   end
 end
