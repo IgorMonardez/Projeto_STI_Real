@@ -8,7 +8,9 @@
 <%# end %>
 
 <form action="/admins_backoffice/search_user" method="get">
-  <input type="text" name="query" id="search-user">
+  <div id="suggestion-box" class="autocomplete">
+    <input type="text" name="query" id="search-user" autocomplete="off">
+  </div>
 </form>
 
 <%= render 'results'%>

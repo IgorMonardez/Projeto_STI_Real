@@ -87,3 +87,13 @@ Campu.create(
   cidade: 'Rio das Ostras',
   cep: 28_895_532
 )
+
+30.times do
+  User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    iduff: Faker::IDNumber.brazilian_id,
+    password: '123456',
+    password_confirmation: '123456'
+  )
+end

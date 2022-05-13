@@ -25,7 +25,10 @@ module UsersBackoffice
 
       respond_to do |format|
         if @point.save
-          format.html { redirect_to  users_backoffice_user_carona_points_path, notice: 'ponto(s) intermediário(s) criado com sucesso.' }
+          format.html do
+            redirect_to users_backoffice_user_carona_points_path,
+                        notice: 'ponto(s) intermediário(s) criado com sucesso.'
+          end
           format.json { render :show, status: :created, location: @point }
         else
           format.html { render :new, status: :unprocessable_entity }

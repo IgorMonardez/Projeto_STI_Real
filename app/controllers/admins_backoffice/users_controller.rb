@@ -18,8 +18,12 @@ module AdminsBackoffice
     end
 
     def search
-      @result = User.where('lower(name) LIKE? ', "%"+params[:query]+"%")
-      render json: @result, status: :ok
+      if params[:query].length >= 3
+        @result = User.where('lower(name) LIKE? ', "%#{params[:query]}%")
+        render json: @result, status: :ok
+      else
+        render json: {}, status: 302
+      end
     end
 
     def show
