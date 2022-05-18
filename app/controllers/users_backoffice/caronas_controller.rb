@@ -10,11 +10,13 @@ module UsersBackoffice
     end
 
     def search
-      if params[:departure].blank? && params[:arrival].blank?
+      @departure = params[:departure].downcase
+      @arrival = params[:arrival].downcase
+      if @departure.blank? && @arrival.blank?
+        redirect_to users_backoffice_welcome_index_path and nil
+      elsif Campu.find_by_bairro(@departure).blank? && Campu.find_by_bairro(@arrival).blank?
         redirect_to users_backoffice_welcome_index_path and nil
       else
-        @departure = params[:departure].downcase
-        @arrival = params[:arrival].downcase
         @results = Carona.where(
           'lower(bairro_departure) = :departure OR lower(bairro_arrival) = :arrival', departure: @departure, arrival: @arrival
         )

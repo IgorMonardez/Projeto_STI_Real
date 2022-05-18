@@ -1,6 +1,5 @@
+# frozen_string_literal: true
 require 'rails_helper'
-require 'faker'
-require 'factory_bot'
 
 RSpec.describe Admin, type: :model do
   it 'é valido com email, nome, iduff e senha encriptada' do

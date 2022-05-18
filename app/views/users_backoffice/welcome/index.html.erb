@@ -2,9 +2,18 @@
 
 <%= form_tag(users_backoffice_user_search_carona_path(current_user), :method => "get") do %>
   <div class="input-group">
+    <div id="departure">
+    <%= label :partida, :partida %>
+      <br>
     <%= search_field_tag :departure, params[:departure], placeholder: "Bairro de partida ou nome do campus" %>
-    <%= search_field_tag :arrival, params[:arrival], placeholder: "Bairro de chegada ou nome do campus" %>
+  </div>
+    <div id="arrival">
+      <%= label :chegada, :chegada %><br>
+      <%= search_field_tag :arrival, params[:arrival], placeholder: "Bairro de chegada ou nome do campus" %>
+    </div>
+
     <div class="input-group-btn">
+      <br>
       <%= button_tag "Procure por carona", class: 'btn btn-info glyphicon glyphicon-search',  name: nil %>
     </div>
   </div>
