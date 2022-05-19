@@ -9,17 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(
-  email: 'igormonardez@id.uff.br',
-  name: 'Igor de Paula Siqueira Monárdez',
-  iduff: '18141356771',
-  password: '123456'
-)
-
-Admin.create(
-  email: 'igormonardez@id.uff.br',
-  name: 'Igor de Paula Siqueira Monárdez',
-  iduff: '18141356771',
-  password: '123456'
+  iduff: '08225892739'
 )
 
 Campu.create(
@@ -87,13 +77,3 @@ Campu.create(
   cidade: 'Rio das Ostras',
   cep: 28_895_532
 )
-
-30.times do
-  User.create(
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    iduff: Faker::IDNumber.brazilian_id,
-    password: '123456',
-    password_confirmation: '123456'
-  )
-end

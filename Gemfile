@@ -28,13 +28,9 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'cancancan', '~> 1.9'
 # Unobtrusive nested forms handling, using jQuery. Use this & discover cocoon-heaven.
 gem 'cocoon'
-
-gem 'devise'
-gem 'devise_token_auth'
 gem 'popper_js', '~> 2.9.3'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stimulus-rails'
-
 # Use Active Storage
 
 gem 'image_processing', '~> 1.2'
@@ -45,6 +41,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+  gem 'capybara', '>= 3.26'
 end
 
 group :development do
@@ -63,7 +60,7 @@ group :test do
   gem 'rspec-rails', '~>5.0.0'
   gem 'rubocop'
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 3.26'
+
 
   gem 'selenium-webdriver'
   gem 'simplecov', require: false, group: :test

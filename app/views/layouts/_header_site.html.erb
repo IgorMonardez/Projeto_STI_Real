@@ -1,16 +1,7 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
   <a href="/"> <%= image_tag('logo_uff.png',width: 60, role: 'img', draggable: "true", class: "bi me-2",alias: 'Logo da UFF') %> </a>
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <% if !user_signed_in?   %>
-      <li><a> <%= link_to 'Log-in Usuário', user_session_path %> </a></li>
-      <% else %>
-      <li><a> <%= link_to 'Área do Usuário', users_backoffice_welcome_index_path %></a></li>
-      <% end %>
-      <% if !admin_signed_in? %>
-      <li><a> <%= link_to 'Log-in Administrador', admin_session_path %></a></li>
-      <%else %>
-      <li><a> <%= link_to 'Área Administrador', admins_backoffice_welcome_index_path %></a></li>
-      <% end %>
+
     </ul>
   </nav>
 </header>
