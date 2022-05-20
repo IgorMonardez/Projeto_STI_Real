@@ -1,14 +1,144 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/features/home_spec.rb": {
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/features/caronas_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/rails_helper.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/environment.rb": {
         "lines": [
           null,
           1,
           null,
+          null,
+          1
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/application.rb": {
+        "lines": [
           1,
+          null,
           1,
-          1,
+          null,
+          null,
           null,
           1,
           null,
@@ -16,24 +146,599 @@
           1,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/environments/test.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
           null,
           1,
           1,
           null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
           1,
           1,
+          null,
+          null,
+          null,
           null,
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/application_controller_renderer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/assets.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/backtrace_silencers.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/content_security_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/cookies_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
           null,
           1,
           null,
           null
         ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/keycloak_client.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/mime_types.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/permissions_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/initializers/wrap_parameters.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/factories/admins.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/factories/campus.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/factories/carona.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/factories/points.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/spec/factories/users.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/config/routes.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/admin_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/admins_backoffice_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/admins_backoffice/users_index_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/admins_backoffice/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/campus_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/caronas_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/points_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/site_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/site/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/user_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/users_backoffice_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/helpers/users_backoffice/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/models/user.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/models/carona.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/users_backoffice/caronas_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/users_backoffice_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1652991811
+    "timestamp": 1653003157
   },
   "Unknown Test Framework": {
     "coverage": {
@@ -270,19 +975,6 @@
         "lines": [
           0,
           null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/site/welcome_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
           0
         ],
         "branches": {
@@ -593,15 +1285,6 @@
         "branches": {
         }
       },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/site_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/admins_backoffice_controller.rb": {
         "lines": [
           null,
@@ -630,6 +1313,19 @@
           0,
           0,
           0
+        ],
+        "branches": {
+        }
+      },
+      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/welcome_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null
         ],
         "branches": {
         }
@@ -732,19 +1428,6 @@
           null,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/igor/Documentos/UFF/STI/Projeto_Final_Real_Real/Projeto_Final_Real_Real/app/controllers/users_backoffice/welcome_controller.rb": {
-        "lines": [
-          null,
-          null,
           0,
           0,
           0,
@@ -875,6 +1558,6 @@
         }
       }
     },
-    "timestamp": 1652989148
+    "timestamp": 1653002193
   }
 }

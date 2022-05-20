@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(version: 2022_05_19_183722) do
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "iduff"
+    t.string "name"
+    t.string "email"
+    t.boolean "active", default: true
+    t.boolean "admin", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

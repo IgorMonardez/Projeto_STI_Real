@@ -1,16 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature "Caronas", type: :feature do
-
+RSpec.feature 'Caronas', type: :feature do
   scenario 'Listar carona' do
-    build(:carona,:user_id => current_user.id,:departure => 'Campus Valonguinho')
-    visit('/users_backoffice/users/current_user/caronas')
+    user = create(:user, id: '08225892739')
+    carona = build(:carona, user_id: '08225892739', :departure => 'Campus Valonguinho', arrival: 'Campus Praia Vermelha')
+    puts carona.inspect
+    visit(users_backoffice_user_caronas_path(user.iduff))
     expect(page).to have_content('Campus Valonguinho')
   end
   context 'Permite criar carona' do
+
     scenario 'com bairro referente a campus na partida' do
       visit 'users_backoffice/welcome#index'
-
       within('#departure-search') do
         fill_in 'Partida', with: 'Centro'
       end
@@ -20,7 +23,6 @@ RSpec.feature "Caronas", type: :feature do
 
     scenario 'e na chegada' do
       visit 'users_backoffice/welcome#index'
-
       within('#departure-search') do
         fill_in 'Chegada', with: 'Centro'
       end
