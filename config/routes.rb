@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :admins
   get 'welcome/index'
   namespace :users_backoffice do
     resources :users, only: %i[show edit] do

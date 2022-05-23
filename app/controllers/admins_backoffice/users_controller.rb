@@ -81,7 +81,7 @@ module AdminsBackoffice
     end
 
     def user_params
-      params.require(:user).permit(:id, :email, :name, :iduff, :password, :password_confirmation)
+      params.require(:user).permit(:id, :email, :name, :iduff)
     end
 
     def search_params

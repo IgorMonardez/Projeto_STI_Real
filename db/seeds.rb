@@ -8,8 +8,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Admin.create(
+  iduff: '08225892739',
+  nome: 'Igor de Paula Siqueira Monárdez',
+  email: 'igormonardez@id.uff.br'
+)
+
 User.create(
-  iduff: '08225892739'
+  iduff: '08225892739',
+  name: 'Igor de Paula Siqueira Monárdez',
+  email: 'igormonardez@id.uff.br'
 )
 
 Campu.create(

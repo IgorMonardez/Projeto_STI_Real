@@ -1,7 +1,12 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
   <a href="/"> <%= image_tag('logo_uff.png',width: 60, role: 'img', draggable: "true", class: "bi me-2",alias: 'Logo da UFF') %> </a>
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-
+      <li><a><%= link_to 'Listar e adicionar Caronas',  users_backoffice_user_caronas_path(current_user), class: 'nav-link px-2 link-dark'%></a></li>
+      <li><a><%= link_to 'Procurar Caronas',  users_backoffice_user_search_carona_path(current_user), class: 'nav-link px-2 link-dark' %></a></li>
+      <% if !Admin.find_by_iduff(current_user.iduff) %>
+        <li><%= link_to 'Campus', admins_backoffice_campus_path, class: 'nav-link px-2 link-gray' %></li>
+        <li><%= link_to 'Usuários', admins_backoffice_users_path, class: 'nav-link px-2 link-gray' %></li>
+      <% end %>
     </ul>
   </nav>
 </header>

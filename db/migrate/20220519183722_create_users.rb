@@ -3,7 +3,7 @@
 class CreateUsers < ActiveRecord::Migration[6.1]
   def change
     create_table :users do |t|
-      t.bigint :iduff
+      t.string :iduff
       t.string :name
       t.string :email
       t.boolean :active, default: true

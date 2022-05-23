@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require_relative '../support/login_helper'
+require 'webdrivers'
 
 RSpec.feature 'Caronas', type: :feature do
-  scenario 'Listar carona' do
-    user = create(:user, id: '08225892739')
-    carona = build(:carona, user_id: '08225892739', :departure => 'Campus Valonguinho', arrival: 'Campus Praia Vermelha')
-    puts carona.inspect
-    visit(users_backoffice_user_caronas_path(user.iduff))
-    expect(page).to have_content('Campus Valonguinho')
+  extend LoginHelper
+  before do
+    @user = create(:user)
+    login_user(@user)
   end
-  context 'Permite criar carona' do
 
+  context 'Permite procurar carona' do
     scenario 'com bairro referente a campus na partida' do
       visit 'users_backoffice/welcome#index'
       within('#departure-search') do
