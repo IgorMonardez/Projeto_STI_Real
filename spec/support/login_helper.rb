@@ -2,11 +2,14 @@
 
 module LoginHelper
   include Iduff::KeycloakClient::Support::LoginHelper
+  include ApplicationHelper
 
   def login_user(user)
     allow_any_instance_of(ApplicationController).to receive(:logged_in?).and_return(true)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    allow_any_instance_of(ApplicationController).to receive(:logged_user).and_return(user)
+    logged_user(user)
     login(user.iduff)
-    current_user = user
     visit('/')
   end
 

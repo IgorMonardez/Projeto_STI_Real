@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :admins
   get 'welcome/index'
   namespace :users_backoffice do
     resources :users, only: %i[show edit] do
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
       end
       get '/search', to: 'caronas#search', as: :search_carona
     end
+    get 'welcome/index'
   end
   namespace :admins_backoffice do
     resources :campus do
@@ -20,8 +20,15 @@ Rails.application.routes.draw do
     end
     resources :users do
       get 'admins_backoffice/desabilitar_user/:user_id', to: 'users#destroy', as: :destroy_user
-      get 'admins_backoffice/reativar_user/_user_id', to: 'users#reactive', as: :reactive_user
+      get 'admins_backoffice/reativar_user/:user_id', to: 'users#reactive', as: :reactive_user
     end
+    resources :admins do
+      get 'admins_backoffice/desabilitar_user/:admin_id', to: 'admins#destroy', as: :destroy_user
+      get 'admins_backoffice/reativar_user/:admin_id', to: 'admins#reactive', as: :reactive_user
+    end
+
+    get '/search_user', to: 'users#search', as: :search_user
+    get 'welcome/index'
   end
 
   root 'welcome#index'

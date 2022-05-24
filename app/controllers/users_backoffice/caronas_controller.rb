@@ -6,17 +6,22 @@ module UsersBackoffice
 
     # GET /caronas or /caronas.json
     def index
-      @caronas = Carona.all.where(user_id: current_user).order(created_at: :desc)
+      @caronas = Carona.where(user_id: User.find_by_iduff(current_user.iduff).id).order(created_at: :desc)
+      @user = User.find_by_iduff(current_user.iduff)
     end
 
     def search
+      @user = User.find_by_iduff(current_user.iduff)
       @departure = params[:departure].downcase
       @arrival = params[:arrival].downcase
       if @departure.blank? && @arrival.blank?
         redirect_to users_backoffice_welcome_index_path and nil
+        flash[:notice] = 'Precisa dos parâmetros'
       elsif Campu.find_by_bairro(@departure).blank? && Campu.find_by_bairro(@arrival).blank?
         redirect_to users_backoffice_welcome_index_path and nil
+        flash[:notice] = 'Precisa de campus na partida ou na chegada'
       else
+        flash[:notice] = 'Carona pesquisada com sucesso'
         @results = Carona.where(
           'lower(bairro_departure) = :departure OR lower(bairro_arrival) = :arrival', departure: @departure, arrival: @arrival
         )
@@ -43,7 +48,7 @@ module UsersBackoffice
     # POST /caronas or /caronas.json
     def create
       @carona = Carona.new(carona_params)
-      @carona.user = current_user
+      @carona.user = User.find_by_iduff(current_user.iduff)
       @campus = Campu.all
 
       respond_to do |format|

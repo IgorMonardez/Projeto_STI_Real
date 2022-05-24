@@ -16,7 +16,7 @@
       <td><%= user.active %></td>
 
       <td><%= link_to 'Olhar', admins_backoffice_user_path(user),class: "btn" %></td>
-      <% if user != current_user %>
+      <% if user.iduff != logged_user.iduff %>
         <td><%= link_to 'Editar', edit_admins_backoffice_user_path(user),class: "btn" %></td>
         <% if user.active %>
           <td><%= link_to 'Desativar',  admins_backoffice_user_destroy_user_path(user),class: "btn", data: { confirm: 'Tem certeza?' } %></td>

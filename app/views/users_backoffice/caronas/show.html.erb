@@ -32,5 +32,5 @@
   <%= @carona.arrival %>
 </p>
 
-<%= link_to 'Edit', edit_users_backoffice_user_carona_point_path(current_user,@carona) %> |
-<%= link_to 'Back', users_backoffice_user_caronas_path(current_user) %>
+<%= link_to 'Edit', edit_users_backoffice_user_carona_point_path(logged_user.id,@carona) %> |
+<%= link_to 'Back', users_backoffice_user_caronas_path(logged_user.id) %>

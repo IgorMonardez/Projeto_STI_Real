@@ -36,9 +36,9 @@
         <% end %>
         </td>
         <td><%= carona.comments %></td>
-        <td><%= link_to 'Show', users_backoffice_user_carona_path(current_user,carona) %></td>
-        <td><%= link_to 'Edit', edit_users_backoffice_user_carona_path(current_user,carona) %></td>
-        <td><%= link_to 'Destroy', users_backoffice_user_carona_destroy_carona_path(current_user,carona), data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', users_backoffice_user_carona_path(logged_user.id,carona) %></td>
+        <td><%= link_to 'Edit', edit_users_backoffice_user_carona_path(logged_user.id,carona) %></td>
+        <td><%= link_to 'Destroy', users_backoffice_user_carona_destroy_carona_path(logged_user.id,carona), data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

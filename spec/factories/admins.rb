@@ -3,8 +3,7 @@
 FactoryBot.define do
   factory :admin do
     email { Faker::Internet.email }
-    name { Faker::Name.name }
-    iduff { Faker::IDNumber.brazilian_citizen_number }
-    encrypted_password { Faker::Internet.password(6) }
+    nome { Faker::Name.name }
+    iduff { '08225892739' }
   end
 end

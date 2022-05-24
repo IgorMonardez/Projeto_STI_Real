@@ -7,26 +7,29 @@ module AdminsBackoffice
     # GET /campus or /campus.json
     def index
       @campus = Campu.all
+      @user = User.find_by_iduff(current_user.iduff)
     end
 
     # GET /campus/1 or /campus/1.json
     def show
       set_campu
+      @user = User.find_by_iduff(current_user.iduff)
     end
 
     # GET /campus/new
     def new
       @campu = Campu.new
+      @user = User.find_by_iduff(current_user.iduff)
     end
 
     # GET /campus/1/edit
     def edit
       set_campu
+      @user = User.find_by_iduff(current_user.iduff)
     end
 
     def search
-      @departure =  params[:departure]
-      @parameter
+      @departure = params[:departure]
       @results = Campu.where(
         'lower(name) LIKE :search', "%#{@parameter}"
       )
@@ -35,7 +38,7 @@ module AdminsBackoffice
     # POST /campus or /campus.json
     def create
       @campu = Campu.new(campu_params)
-
+      @user = User.find_by_iduff(current_user.iduff)
       respond_to do |format|
         if @campu.save
           format.html { redirect_to admins_backoffice_campu_path(@campu), notice: 'Campus criado com sucesso.' }

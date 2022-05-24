@@ -5,7 +5,7 @@ FactoryBot.define do
     date_hour { Faker::Date.in_date_period }
     departure { Faker::Address.street_address }
     arrival { Faker::Address.street_address }
-    user_id { Faker::Number.leading_zero_number(digits: 11) }
+    user_id { 1 }
   end
 end
 

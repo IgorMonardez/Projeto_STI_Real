@@ -1,14 +1,14 @@
+<p id="notice"><%= notice %></p>
 <h1> Procure por carona</h1>
 
-<%= form_tag(users_backoffice_user_search_carona_path(current_user), :method => "get") do %>
+<%= form_tag(users_backoffice_user_search_carona_path(logged_user.id), :method => "get") do %>
   <div class="input-group">
-    <div id="departure">
-    <%= label :partida, :partida %>
-      <br>
-    <%= search_field_tag :departure, params[:departure], placeholder: "Bairro de partida ou nome do campus" %>
+    <div id="departure-search">
+    <%= label :departure, :departure %><br>
+    <%= search_field_tag :departure, params[:departure], placeholder: "Bairro de partida ou nome do campus", id:'partida' %>
   </div>
-    <div id="arrival">
-      <%= label :chegada, :chegada %><br>
+    <div id="arrival-search">
+      <%= label :arrival, :arrival %><br>
       <%= search_field_tag :arrival, params[:arrival], placeholder: "Bairro de chegada ou nome do campus" %>
     </div>
 

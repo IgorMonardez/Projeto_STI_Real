@@ -32,7 +32,7 @@ gem 'popper_js', '~> 2.9.3'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stimulus-rails'
 # Use Active Storage
-
+gem 'rubocop', require: false
 gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -60,7 +60,6 @@ end
 group :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~>5.0.0'
-  gem 'rubocop'
   # Adds support for Capybara system testing and selenium driver
 
   gem 'simplecov', require: false, group: :test
