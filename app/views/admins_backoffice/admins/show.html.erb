@@ -1,6 +1,6 @@
 <p>
-  <strong>Name:</strong>
-  <%= @admin.name %>
+  <strong>Nome:</strong>
+  <%= @admin.nome %>
 </p>
 <p>
   <strong>Email:</strong>
@@ -10,7 +10,8 @@
   <strong>Iduff</strong>
   <%= @admin.iduff %>
 </p>
-
-<%= link_to 'Edite', edit_admins_backoffice_admin_path(@admin) %>
+<% if @admin.iduff != logged_user.iduff %>
+  <%= link_to 'Edite', edit_admins_backoffice_admin_path(@admin) %>
+<% end %>
 
 <%= link_to 'Volte', admins_backoffice_admins_path %>

@@ -11,16 +11,16 @@
   <% @admins.each do |admin| %>
     <tr>
       <td><%= admin.email %></td>
-      <td><%= admin.name %></td>
+      <td><%= admin.nome %></td>
       <td><%= admin.iduff %></td>
       <td><%= admin.active.to_s %></td>
       <td><%= link_to 'Olhe', admins_backoffice_admin_path(admin),class: "btn" %></td>
-      <% if admin!= current_admin %>
+      <% if admin.iduff != logged_user.iduff %>
         <td><%= link_to 'Edite', edit_admins_backoffice_admin_path(admin),class: "btn" %></td>
         <% if admin.active %>
-          <td><%= link_to 'Desative',  admins_backoffice_admin_destroy_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+          <td><%= link_to 'Desative',  admins_backoffice_admin_destroy_user_path(admin,logged_user.id,),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
         <% else %>
-          <td><%= link_to 'Reativar',  admins_backoffice_admin_reactive_admin_path(admin),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
+          <td><%= link_to 'Reativar',  admins_backoffice_admin_reactive_user_path(admin,logged_user.id),class: "btn", data: { confirm: 'Tem certeza?' } %></td>
         <% end %>
       <% end %>
       </tr>

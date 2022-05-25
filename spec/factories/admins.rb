@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :admin do
     email { Faker::Internet.email }
     nome { Faker::Name.name }
-    iduff { '08225892739' }
+    iduff { Faker::Number.number(digits: 11) }
   end
 end

@@ -32,8 +32,8 @@ gem 'popper_js', '~> 2.9.3'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'stimulus-rails'
 # Use Active Storage
-gem 'rubocop', require: false
 gem 'image_processing', '~> 1.2'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -55,6 +55,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'rubocop', require: false
 end
 
 group :test do

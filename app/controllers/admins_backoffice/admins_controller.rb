@@ -54,12 +54,14 @@ module AdminsBackoffice
 
     def destroy
       @admin = Admin.find(params[:admin_id])
+      @admin.update active: false
+
       respond_to do |format|
         if @admin.update active: false
           format.html { redirect_to admins_backoffice_admins_path, notice: 'Admin foi devidamente atualizado.' }
           format.json { head :no_content }
         else
-          format.html { render :'admins_backoffice/admins/index', status: :unprocessable_entity }
+          format.html { render admins_backoffice_admins_path, status: :unprocessable_entity }
           format.json { render json: @admin.errors, status: :unprocessable_entity }
         end
       end
@@ -81,7 +83,7 @@ module AdminsBackoffice
     end
 
     def admin_params
-      params.require(:admin).permit(:admin_id, :id, :email, :name, :iduff, :active, :password, :password_confirmation)
+      params.require(:admin).permit(:id, :email, :nome, :iduff, :active)
     end
   end
 end

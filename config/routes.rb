@@ -23,8 +23,8 @@ Rails.application.routes.draw do
       get 'admins_backoffice/reativar_user/:user_id', to: 'users#reactive', as: :reactive_user
     end
     resources :admins do
-      get 'admins_backoffice/desabilitar_user/:admin_id', to: 'admins#destroy', as: :destroy_user
-      get 'admins_backoffice/reativar_user/:admin_id', to: 'admins#reactive', as: :reactive_user
+      get 'admins_backoffice/desabilitar_user/:user_id', to: 'admins#destroy', as: :destroy_user
+      get 'admins_backoffice/reativar_user/:user_id', to: 'admins#reactive', as: :reactive_user
     end
 
     get '/search_user', to: 'users#search', as: :search_user
